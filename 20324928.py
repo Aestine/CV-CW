@@ -128,12 +128,12 @@ class PanoramaApp(QMainWindow):
             return
 
         try:
-            # 初始化拼接器
+            # Initializes the stitcher
             stitcher = cv2.Stitcher_create()
             src_imgs = [frame for frame in self.frames]  # Use the images directly from the frames list.
 
             start_time = time.time()  # Start timing here
-            # 使用Stitcher进行拼接
+            # Use Stitcher for stitching
             status, panorama = stitcher.stitch(src_imgs)
 
             if status == cv2.Stitcher_OK:
